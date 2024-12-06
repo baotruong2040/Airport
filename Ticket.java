@@ -19,6 +19,12 @@ public class Ticket {
         this.hanhKhach = hanhKhach;
         this.ngayDatVe = myDateObj.format(myFormatObj);
     }
+    
+    public Ticket(String maChuyenBay, char hangGhe) {
+        this.maChuyenBay = maChuyenBay;
+        this.hangGhe = hangGhe;
+    }
+
     public String getMaVe() {
         return maVe;
     }

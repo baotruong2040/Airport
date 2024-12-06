@@ -21,12 +21,13 @@ public class HanhKhach implements IHanhKhach{
         this.soHoChieu = soHoChieu;
         this.soDamTichLuy = 0;
         dsVeDaDat = new Ticket[soVeToiDa];
+        hangTheThanhVien = 'B';
     }
   
 
     @Override
     public void datVe(String maChuyenBay, char hangGhe) {
-        
+        Ticket newTicket = new 
     }
 
 
@@ -47,13 +48,29 @@ public class HanhKhach implements IHanhKhach{
 
     @Override
     public void tichLuy(double khoangCach, char hangGhe) {
-        soDamTichLuy+= khoangCach;
+        soDamTichLuy+= tinhToanDamBay(khoangCach, hangGhe);
     }
-    public double tinhToanDamBay() {
-        
+    public double tinhToanDamBay(double khoangCach, char hangGhe) {
+        double dam = 0;
+        switch (hangGhe) {
+            case 'Y':
+                dam = khoangCach;
+                break;
+            case 'B':
+                dam = khoangCach*1.5;
+                break;
+            case 'F':
+                dam = khoangCach*2;
+                break;
+        }
+        return dam;
     }
     public void nangHangTheThanhVien() {
-
+         if (soDamTichLuy<50000 && soDamTichLuy>=10000 ) {
+            hangTheThanhVien = 'S';
+         }else if (soDamTichLuy >= 50000) {
+            hangTheThanhVien = 'G';
+         }
     }
 
     @Override

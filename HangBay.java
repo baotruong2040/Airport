@@ -70,7 +70,7 @@ public class HangBay {
         }
     }
 
-    public double tinhTongDoanhThu() {
-        
-    }
+    /*public double tinhTongDoanhThu() {
+        sleep
+    }*/
 }
